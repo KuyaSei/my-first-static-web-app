@@ -8,24 +8,33 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #808080; /* Gray background */
             padding: 50px;
         }
         h1 {
-            color: #333;
+            color: #ffffff; /* White text */
         }
         p {
-            color: #666;
+            color: #ffffff; /* White text */
+        }
+        button {
+            background-color: #000000; /* Black button */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1>Welcome to My First Static Site on Azure Web App!</h1>
     <p>This is a simple welcome page to celebrate your achievement.</p>
+    <button id="colorButton">Change Color</button>
     <script>
-        // Optional JavaScript to add interactivity or dynamic content
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Welcome to your new static site!');
+        document.getElementById('colorButton').addEventListener('click', function() {
+            var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF']; // Array of colors
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Select a random color
+            this.style.backgroundColor = randomColor; // Change the button's background color
         });
     </script>
 </body>
